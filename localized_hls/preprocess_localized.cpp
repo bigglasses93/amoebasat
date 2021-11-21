@@ -175,7 +175,7 @@ void generate_inter(){
     int i;
     
     fp2 = fopen("./f.h", "w+");
-    fp3 = fopen("./f_sign.", "w+");
+    fp3 = fopen("./f_sign.h", "w+");
     //fp4 = fopen("f_tmp.txt", "w+");
     
     fprintf(fp2,"f_t f[N_CLAUSE][3]={\n");
