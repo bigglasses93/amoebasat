@@ -84,18 +84,22 @@ one_bit_t check_f(f_t inter[N_CLAUSE][N_LITERAL], one_bit_t inter_sign[N_CLAUSE]
 int amoebasat(
 		z_t Z[N_VARIABLE+1][2],
 		one_bit_t x[N_VARIABLE+1],
-		one_bit_t sat)
+		one_bit_t *sat)
 {
 	int NStep = 0;
 	one_bit_t x_tmp[N_VARIABLE+1];
 #pragma HLS ARRAY_PARTITION variable=x_tmp complete dim=0
 	one_bit_t Y[N_VARIABLE+1][2];
+#pragma HLS ARRAY_PARTITION variable=Y complete dim=0
 #pragma HLS DEPENDENCE variable=Y array inter WAR false
 #pragma HLS DEPENDENCE variable=x_tmp array inter WAR false
 	one_bit_t L[N_VARIABLE+1][2];
+#pragma HLS ARRAY_PARTITION variable=L complete dim=0
 #pragma HLS DEPENDENCE variable=L array inter WAR false
 	largeX_t LargeX[N_VARIABLE+1][2];
+#pragma HLS ARRAY_PARTITION variable=LargeX complete dim=0
 	z_t Z_tmp[N_VARIABLE+1][2];
+#pragma HLS ARRAY_PARTITION variable=Z_tmp complete dim=0
 	one_bit_t sat_temp=0;
 	
 	//initialize
@@ -105,19 +109,22 @@ int amoebasat(
 #pragma HLS PIPELINE
 		Z_tmp[i][0] = Z[i][0];
 		Z_tmp[i][1] = Z[i][1];
+		LargeX[i][0] = 0; LargeX[i][1]=0;
+		Y[i][0] = 0; Y[i][1] = 0;
+		L[i][0] = 0; L[i][1] = 0;
 	}
 
 	//for(NStep=0;NStep<MAX_N_STEP;NStep++){
 	bool done = false;
 	LOOP_UPDATE_ALL:
 	for(NStep=0;!done;NStep++){
-	//for(NStep=0;(NStep<MAX_N_STEP)&&(sat_temp==0);NStep++){
+#pragma HLS PIPELINE
 		update_Z(Z_tmp);
 		update_LargeX(Y,LargeX);
 		update_Y(Y, L, Z_tmp);
 		update_L(L,LargeX);
 		update_x(x_tmp,LargeX);
-		sat_temp = check_f(f,f_sign,x_tmp);//cout<<"sat_temp="<<sat_temp<<"\n";
+		sat_temp = check_f(inter,inter_sign,x_tmp);//cout<<"sat_temp="<<sat_temp<<"\n";
 {
 		#pragma HLS LATENCY min=1 max=1
 }
@@ -130,7 +137,7 @@ int amoebasat(
 #pragma HLS PIPELINE
 		x[k] = x_tmp[k];
 	}
-	sat = sat_temp;
+	*sat = sat_temp;
 	return NStep;
 }
 

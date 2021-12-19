@@ -15,7 +15,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit1_0[i][2] ][ unit1_0_sign[i][2] ] >0);
 			light_on10 = X_contra01 & X_contra23 & X_contra45;
 			if(unit1_0[i][4]==0){
-				L[1][1] = L[1][1] & (!(X_contra01 & X_contra23));}
+				L[1][1] = 0;
+				break;
+			}
 		}
 	}
 	L[1][0] = light_on10;
@@ -32,7 +34,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit1_1[i][2] ][ unit1_1_sign[i][2] ] >0);
 			light_on11 = X_contra01 & X_contra23 & X_contra45;
 			if(unit1_1[i][4]==0){
-				L[1][0] = L[1][0] & (!(X_contra01 & X_contra23));}
+				L[1][0] = 0;
+				break;
+			}
 		}
 	}
 	L[1][1] = light_on11;
@@ -49,7 +53,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit2_0[i][2] ][ unit2_0_sign[i][2] ] >0);
 			light_on20 = X_contra01 & X_contra23 & X_contra45;
 			if(unit2_0[i][4]==0){
-				L[2][1] = L[2][1] & (!(X_contra01 & X_contra23));}
+				L[2][1] = 0;
+				break;
+			}
 		}
 	}
 	L[2][0] = light_on20;
@@ -66,7 +72,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit2_1[i][2] ][ unit2_1_sign[i][2] ] >0);
 			light_on21 = X_contra01 & X_contra23 & X_contra45;
 			if(unit2_1[i][4]==0){
-				L[2][0] = L[2][0] & (!(X_contra01 & X_contra23));}
+				L[2][0] = 0;
+				break;
+			}
 		}
 	}
 	L[2][1] = light_on21;
@@ -83,7 +91,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit3_0[i][2] ][ unit3_0_sign[i][2] ] >0);
 			light_on30 = X_contra01 & X_contra23 & X_contra45;
 			if(unit3_0[i][4]==0){
-				L[3][1] = L[3][1] & (!(X_contra01 & X_contra23));}
+				L[3][1] = 0;
+				break;
+			}
 		}
 	}
 	L[3][0] = light_on30;
@@ -100,7 +110,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit3_1[i][2] ][ unit3_1_sign[i][2] ] >0);
 			light_on31 = X_contra01 & X_contra23 & X_contra45;
 			if(unit3_1[i][4]==0){
-				L[3][0] = L[3][0] & (!(X_contra01 & X_contra23));}
+				L[3][0] = 0;
+				break;
+			}
 		}
 	}
 	L[3][1] = light_on31;
@@ -117,7 +129,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit4_0[i][2] ][ unit4_0_sign[i][2] ] >0);
 			light_on40 = X_contra01 & X_contra23 & X_contra45;
 			if(unit4_0[i][4]==0){
-				L[4][1] = L[4][1] & (!(X_contra01 & X_contra23));}
+				L[4][1] = 0;
+				break;
+			}
 		}
 	}
 	L[4][0] = light_on40;
@@ -134,7 +148,9 @@ void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 			X_contra45 = ( LargeX[ unit4_1[i][2] ][ unit4_1_sign[i][2] ] >0);
 			light_on41 = X_contra01 & X_contra23 & X_contra45;
 			if(unit4_1[i][4]==0){
-				L[4][0] = L[4][0] & (!(X_contra01 & X_contra23));}
+				L[4][0] = 0;
+				break;
+			}
 		}
 	}
 	L[4][1] = light_on41;

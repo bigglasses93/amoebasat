@@ -175,7 +175,7 @@ void generate_inter(){
     int i;
     
     fp2 = fopen("./f.h", "w+");
-    fp3 = fopen("./f_sign.", "w+");
+    fp3 = fopen("./f_sign.h", "w+");
     //fp4 = fopen("f_tmp.txt", "w+");
     
     fprintf(fp2,"f_t f[N_CLAUSE][3]={\n");
@@ -325,6 +325,7 @@ void create_rules_update(){
  int i, j; //unit index
     int k, l, m, n;
     int count_rules[N_VARIABLE+1][2];
+    char s[1000000], s1[1000];
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //version plain
@@ -334,7 +335,7 @@ void create_rules_update(){
     fprintf(fp4,"\t//Check INTRA rules of all units\n");
     fprintf(fp4,"\tfor(int i=1;i<=N_VARIABLE;i++){\n");
     fprintf(fp4,"\t\tL[i][0]=LargeX[i][1]>0;L[i][1]=LargeX[i][0]>0;\n\t}\n");
-    fprintf(fp4,"\t//Check INTER rules of all units\n");
+    fprintf(fp4,"\t//Check INTER & COLLAPSE rules of all units\n");
     for(i=0;i<N_CLAUSE;i++){
         strcpy(s,"");
         if(inter[3*i][2]==0){            

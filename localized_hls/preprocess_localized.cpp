@@ -446,8 +446,8 @@ void create_local_rules(){
 
             sprintf(s1,"\t\t\tif(unit%d_%d[i][4]==0){\n",i,j);strcat(s,s1);
             //COLLAPSE
-            sprintf(s1,"\t\t\t\tL[%d][%d] = L[%d][%d] & (!(X_contra01 & X_contra23));}\n",i,1-j,i,1-j); strcat(s,s1);
-            //sprintf(s1,"\t\t\t\tL[%d][%d] = 0;\n\t\t\t\tbreak;\n\t\t\t}\n",i,1-j); strcat(s,s1);
+            //sprintf(s1,"\t\t\t\tL[%d][%d] = L[%d][%d] & (!(X_contra01 & X_contra23));}\n",i,1-j,i,1-j); strcat(s,s1);
+            sprintf(s1,"\t\t\t\tL[%d][%d] = 0;\n\t\t\t\tbreak;\n\t\t\t}\n",i,1-j); strcat(s,s1);
 
 
             sprintf(s1,"\t\t}\n"); strcat(s,s1);

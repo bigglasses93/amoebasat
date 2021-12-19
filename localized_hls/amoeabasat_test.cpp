@@ -1,6 +1,4 @@
 #include "amoebasat.h"
-#include "f.h"
-#include "f_sign.h"
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
@@ -9,7 +7,27 @@ using namespace std;
 unsigned state[1];
 one_bit_t x[N_VARIABLE+1];
 z_t Z_in[N_VARIABLE+1][2];
-#define N_RUNS 10
+
+f_t f1[N_CLAUSE][3]={
+2, 3, 1,
+3, 4, 2,
+3, 4, 2,
+4, 1, 3,
+4, 1, 3,
+1, 2, 4,
+1, 2, 4,
+2, 3, 1,
+2, 3, 1};
+one_bit_t f1_sign[N_CLAUSE][3]={
+0, 1, 0,
+0, 1, 1,
+0, 1, 0,
+0, 1, 1,
+0, 1, 0,
+0, 1, 1,
+0, 1, 0,
+0, 1, 1,
+0, 0, 0};
 
 one_bit_t satisfiable(f_t inter[N_CLAUSE][N_LITERAL], one_bit_t inter_sign[N_CLAUSE][N_LITERAL], one_bit_t x[N_VARIABLE+1]){
 	int clause_id;
@@ -52,18 +70,18 @@ int main() {
 	int i;
     int NStep = 0;
     int NStep_avg = 0;
-    int sat = 0;
+    one_bit_t sat = 0;
     srand(time(NULL));
 
-    for(i=0;i<N_RUNS;i++){
+    for(i=0;i<1;i++){
         int seed = rand();
         init(seed,Z_in);
-        NStep = amoebasat(Z_in,x,sat);
+        NStep = amoebasat(Z_in,x,&sat);
         NStep_avg+=NStep;
         printf("\nNStep = %d ",NStep);
         for(int k=1;k<=N_VARIABLE;k++) cout << x[k];
 
-        if(satisfiable(f,f_sign,x)==1) printf("PASSED ");
+        if(satisfiable(f1,f1_sign,x)==1) printf("PASSED ");
         else printf("UNSATISFIED ");
     }
    printf("\nAverage #steps = %d ", NStep_avg/i);
