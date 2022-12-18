@@ -1,0 +1,9 @@
+INFO-FLOW: Workspace /home/anh/workspace/amoebasat/dynamic_epsilon/dynamic-eps/solution1 opened at Mon Dec 19 00:09:20 JST 2022
+Execute     set_part xc7z035fbv676-3 -tool vivado 
+Execute       ap_part_info -name xc7z035fbv676-3 -data single -quiet 
+Command       ap_part_info done; 1.11 sec.
+Execute       ap_family_info 
+ERROR: [HLS 200-70] Part 'xc7z035fbv676-3' is not installed.
+Command     set_part done; error code: 2; 1.11 sec.
+Command   ap_source done; error code: 1; 1.13 sec.
+Execute   cleanup_all 

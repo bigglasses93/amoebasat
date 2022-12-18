@@ -1,0 +1,26 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vivado/2019.2/scripts/vivado_hls/hls.tcl -notrace
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'root' on host 'anh-PRIMERGY-RX2540-M5' (Linux_x86_64 version 5.15.0-46-generic) on Mon Dec 19 00:10:31 JST 2022
+INFO: [HLS 200-10] On os Ubuntu 20.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/anh/workspace/amoebasat/centralizedL_hls'
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-10] Creating and opening project '/home/anh/workspace/amoebasat/centralizedL_hls/test'.
+WARNING: [HLS 200-40] Cannot find design file './amoebasat.cpp'
+INFO: [HLS 200-10] Adding design file './rules_update.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/anh/workspace/amoebasat/centralizedL_hls/test/solution1'.
+ERROR: [HLS 200-70] Part 'xc7z030-ffv676-3' is not installed.
+command 'ap_source' returned error code
+    while executing
+"source run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $arg] "
+
+INFO: [Common 17-206] Exiting vivado_hls at Mon Dec 19 00:10:32 2022...
