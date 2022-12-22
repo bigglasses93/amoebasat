@@ -84,7 +84,7 @@ one_bit_t check_f(f_t f[N_VARIABLE][3], one_bit_t f_sign[N_VARIABLE][3], one_bit
 	Loop_update_f:
 	for(clause_id=0; clause_id<402; clause_id++){
 		c0 = x[ f[clause_id][0] ] ^ f_sign[clause_id][0];
-		if(f[clause_id][1]>0)c1 = x[ f[clause_id][1] ] ^ inter_sign[clause_id][1];
+		if(f[clause_id][1]>0)c1 = x[ f[clause_id][1] ] ^ f_sign[clause_id][1];
 		else c1=0;
 		c2 = x[ f[clause_id][2] ] ^ f_sign[clause_id][2];
 		//if(clause_id<2) cout << "clause" << clause_id+1 << " "<<inter[clause_id][0]<<" "<<inter[clause_id][1]<<" "<<c0<<" "<<c1<<" "<<c2<<"\n";

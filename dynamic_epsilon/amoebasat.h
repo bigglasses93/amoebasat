@@ -1,7 +1,7 @@
 #include "ap_int.h"
 
-#define N_VARIABLE 4
-#define N_CLAUSE 9
+#define N_VARIABLE 225
+#define N_CLAUSE 960
 #define N_LITERAL 3
 //#define size_contra_max 10*N_CLAUSE*N_CLAUSE/4/N_VARIABLE
 //#define size_contra 21

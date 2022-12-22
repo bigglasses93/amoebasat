@@ -1,0 +1,230 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vivado/2019.2/scripts/vivado_hls/hls.tcl -notrace
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'root' on host 'anh-PRIMERGY-RX2540-M5' (Linux_x86_64 version 5.15.0-46-generic) on Mon Dec 19 01:03:47 JST 2022
+INFO: [HLS 200-10] On os Ubuntu 20.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/anh/workspace/amoebasat/multi_epsilon'
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-10] Opening and resetting project '/home/anh/workspace/amoebasat/multi_epsilon/multi-eps'.
+INFO: [HLS 200-10] Adding design file 'amoebasat_multi_eps_hls.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'amoebasat.h' to the project
+INFO: [HLS 200-10] Adding design file 'rules_update.cpp' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xcu280-fsvh2892-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'rules_update.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'amoebasat_multi_eps_hls.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 930.941 ; gain = 526.004 ; free physical = 148427 ; free virtual = 182185
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 930.941 ; gain = 526.004 ; free physical = 148427 ; free virtual = 182185
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 930.941 ; gain = 526.004 ; free physical = 148377 ; free virtual = 182138
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 931.504 ; gain = 526.566 ; free physical = 148370 ; free virtual = 182132
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'check_f' (amoebasat_multi_eps_hls.cpp:80).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'update_x' (amoebasat_multi_eps_hls.cpp:63).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'update_LargeX' (amoebasat_multi_eps_hls.cpp:48).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'update_L' (rules_update.cpp:2).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'update_Z' (amoebasat_multi_eps_hls.cpp:29).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'update_Y' (amoebasat_multi_eps_hls.cpp:18).
+INFO: [HLS 200-489] Unrolling loop 'Loop_update_f' (amoebasat_multi_eps_hls.cpp:85) in function 'check_f' completely with a factor of 402.
+INFO: [HLS 200-489] Unrolling loop 'x_OUTER' (amoebasat_multi_eps_hls.cpp:66) in function 'update_x' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'LargeX_OUTER' (amoebasat_multi_eps_hls.cpp:51) in function 'update_LargeX' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'LargeX_INNER' (amoebasat_multi_eps_hls.cpp:53) in function 'update_LargeX' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (rules_update.cpp:4) in function 'update_L' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Z_OUTER' (amoebasat_multi_eps_hls.cpp:31) in function 'update_Z' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Z_INNER' (amoebasat_multi_eps_hls.cpp:33) in function 'update_Z' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Y_OUTER' (amoebasat_multi_eps_hls.cpp:20) in function 'update_Y' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Y_INNER' (amoebasat_multi_eps_hls.cpp:22) in function 'update_Y' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'EPSILON' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'x.V' (amoebasat_multi_eps_hls.cpp:104) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'Z_tmp.V' (amoebasat_multi_eps_hls.cpp:108) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'eps.V' (amoebasat_multi_eps_hls.cpp:103) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'x_tmp.V' (amoebasat_multi_eps_hls.cpp:113) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'Y.V' (amoebasat_multi_eps_hls.cpp:115) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'L.V' (amoebasat_multi_eps_hls.cpp:117) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'LargeX.V' (amoebasat_multi_eps_hls.cpp:119) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'EPSILON' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'Z_tmp.V' (amoebasat_multi_eps_hls.cpp:108) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'eps.V' (amoebasat_multi_eps_hls.cpp:103) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'Y.V' (amoebasat_multi_eps_hls.cpp:115) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'L.V' (amoebasat_multi_eps_hls.cpp:117) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'LargeX.V' (amoebasat_multi_eps_hls.cpp:119) in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'update_Y' into 'amoebasat' (amoebasat_multi_eps_hls.cpp:142) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (amoebasat_multi_eps_hls.cpp:63:25) to (amoebasat_multi_eps_hls.cpp:79:1) in function 'update_x'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (amoebasat_multi_eps_hls.cpp:29:19) to (amoebasat_multi_eps_hls.cpp:47:1) in function 'update_Z'... converting 25 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (amoebasat_multi_eps_hls.cpp:48:30) to (amoebasat_multi_eps_hls.cpp:62:1) in function 'update_LargeX'... converting 25 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (amoebasat_multi_eps_hls.cpp:80:66) to (amoebasat_multi_eps_hls.cpp:98:2) in function 'check_f'... converting 13 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'update_LargeX' into 'amoebasat' (amoebasat_multi_eps_hls.cpp:145) automatically.
+INFO: [XFORM 203-602] Inlining function 'update_x' into 'amoebasat' (amoebasat_multi_eps_hls.cpp:146) automatically.
+INFO: [XFORM 203-602] Inlining function 'check_f' into 'amoebasat' (amoebasat_multi_eps_hls.cpp:147) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'update_L' (rules_update.cpp:2)...49 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'amoebasat' (amoebasat_multi_eps_hls.cpp:102)...10 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 931.504 ; gain = 526.566 ; free physical = 148038 ; free virtual = 181801
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[0][0].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[2][0].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[4][0].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[2][1].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[3][1].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[4][1].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[0][1].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[1][1].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[1][0].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'L[3][0].V' (amoebasat_multi_eps_hls.cpp:117).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[0][1].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[3][0].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[1][0].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[4][0].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[3][1].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'Z.V' (amoebasat_multi_eps_hls.cpp:102).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[2][0].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[2][1].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[1][1].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'LargeX[4][1].V' (amoebasat_multi_eps_hls.cpp:119).
+WARNING: [ANALYSIS 214-52] Found false 'WAR' inter dependency for variable 'Z.V' (amoebasat_multi_eps_hls.cpp:102).
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 931.504 ; gain = 526.566 ; free physical = 148022 ; free virtual = 181786
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'amoebasat' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_Z' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'update_Z'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 44.7 seconds; current allocated memory: 175.368 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 175.899 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'update_L' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'update_L'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 176.443 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 177.016 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'amoebasat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_INIT'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_UPDATE_ALL'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_WRITE'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 178.272 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 179.995 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_Z' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_Z'.
+INFO: [HLS 200-111]  Elapsed time: 0.36 seconds; current allocated memory: 181.431 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'update_L' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'update_L'.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 184.654 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'amoebasat' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/Z_V' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_0_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_0_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_1_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_1_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_2_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_2_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_3_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_3_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_4_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/eps_4_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/x_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/x_1_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/x_2_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/x_3_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/x_4_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'amoebasat/sat_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'amoebasat' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'amoebasat_mux_83_1_1_1' to 'amoebasat_mux_83_bkb' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'amoebasat/eps_0_0_V' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'amoebasat/eps_0_1_V' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'amoebasat/x_0_V' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'amoebasat_mux_83_bkb': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'amoebasat'.
+INFO: [HLS 200-111]  Elapsed time: 0.48 seconds; current allocated memory: 190.305 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 199.32 MHz
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 931.504 ; gain = 526.566 ; free physical = 147932 ; free virtual = 181708
+INFO: [VHDL 208-304] Generating VHDL RTL for amoebasat.
+INFO: [VLOG 209-307] Generating Verilog RTL for amoebasat.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 19 01:04:45 2022...
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source run_vivado.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+Wrote  : </home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+WARNING: [BD 41-927] Following properties on pin /hls_inst/ap_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	FREQ_HZ=100000000.0 
+Wrote  : </home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+VHDL Output written to : /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/synth/bd_0.v
+VHDL Output written to : /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/sim/bd_0.v
+VHDL Output written to : /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+Using BD top: bd_0_wrapper
+INFO: [BD 41-1662] The design 'bd_0.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/synth/bd_0.v
+VHDL Output written to : /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/sim/bd_0.v
+VHDL Output written to : /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hls_inst .
+Exporting to file /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/hw_handoff/bd_0.hwh
+Generated Block Design Tcl file /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/hw_handoff/bd_0_bd.tcl
+Generated Hardware Definition File /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/synth/bd_0.hwdef
+[Mon Dec 19 01:05:03 2022] Launched bd_0_hls_inst_0_synth_1...
+Run output will be captured here: /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/runme.log
+[Mon Dec 19 01:05:03 2022] Launched synth_1...
+Run output will be captured here: /home/anh/workspace/amoebasat/multi_epsilon/multi-eps/solution1/impl/verilog/project.runs/synth_1/runme.log
+[Mon Dec 19 01:05:03 2022] Waiting for synth_1 to finish...

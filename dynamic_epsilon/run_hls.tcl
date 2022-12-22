@@ -5,11 +5,11 @@
 ############################################################
 open_project -reset dynamic-eps
 set_top amoebasat
-add_files amoebasat_dynamic_epsilon_hls.cpp
+add_files amoebasat_dynamic_eps_hls.cpp
 add_files amoebasat.h
 add_files rules_update.cpp
 open_solution "solution1"
-set_part {xc7z035fbv676-3} -tool vivado
+set_part {xcu280-fsvh2892-2L-e} -tool vivado
 create_clock -period 10 -name default
 #csim_design -compiler gcc
 csynth_design

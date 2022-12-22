@@ -1,4 +1,4 @@
-#include 
+#include "amoebasat.h"
 void update_L(one_bit_t L[N_VARIABLE+1][2], largeX_t LargeX[N_VARIABLE+1][2]){
 	//Check INTRA rules of all units
 	for(int i=1;i<=N_VARIABLE;i++){
